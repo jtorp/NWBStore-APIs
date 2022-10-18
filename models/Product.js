@@ -13,27 +13,42 @@ const ProductSchema = new mongoose.Schema(
       required: [true, 'Please provide product description'],
       maxlength: [1000, 'Description can not be more than 1000 characters'],
     },
+    condition:
+    {
+      type: String,
+      required: true
+    },
     price: {
       type: Number,
       required: [true, 'Please provide product price'],
       default: 0,
     },
-    image: {
+    gender: {
       type: String,
+    },
+    image: {
+      type: Array,
       required: true,
     },
     category: {
       type: Array,
       required: [true, 'Please provide product category'],
-      // enum: ['newin','shoes','girls', 'boys', 'baby', 'toys'],
     },
     brand: {
       type: String,
       required: [true, 'Please provide brand name or Unknown'],
     },
     color: {
-      type: String,
+      type: Array,
       required: false,
+    },
+    material: {
+      type: String,
+      required: [true, 'Please provide material desc or Unknown'],
+    },
+    type: {
+      type: String,
+      required: [true, 'Please provide type or Unknown'],
     },
     size: {
       type: String,

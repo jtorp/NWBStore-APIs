@@ -52,7 +52,7 @@ UserSchema.methods.createJWT =  function () {
       isAdmin: this.isAdmin,
     },
     process.env.JWT_SECRET,
-    { expiresIn: "3d" }
+    { expiresIn: "15d" }
   )
 }
 
